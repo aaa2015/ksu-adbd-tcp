@@ -1,6 +1,6 @@
 #!/bin/sh
 # publish.sh
-# KernelSU module pack script
+# KernelSU + Magisk module pack script
 # Run inside module directory
 
 set -e
@@ -38,12 +38,10 @@ echo "    ID:      $MODULE_ID"
 echo "    Version: $MODULE_VERSION ($MODULE_VERSION_CODE)"
 echo "    Output:  $ZIP_PATH"
 
-# ---------- 打包（关键点：用 . 保证 ZIP 根目录正确） ----------
+# ---------- 打包（符合 Magisk + KernelSU 规范） ----------
 cd "$MODULE_DIR"
-
-zip -r "$ZIP_PATH" . \
+zip -r "$ZIP_PATH" service.sh module.prop adb_port.conf uninstall.sh \
     -x "*.git*" \
     -x "*publish.sh"
 
 echo "[✓] Package created successfully"
-
