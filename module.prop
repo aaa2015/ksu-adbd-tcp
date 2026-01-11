@@ -1,0 +1,6 @@
+id=ksu-adbd-tcp
+name=ADB over TCP (Secure • Self-Healing • Configurable)
+version=1.2
+versionCode=3
+author=ChatGPT
+description=Secure, self-healing & configurable ADB over TCP for Xiaomi 13 (HyperOS 3 + Android 15)
